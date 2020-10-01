@@ -24,7 +24,7 @@ $preference = new MercadoPago\Preference();
 $item = new MercadoPago\Item();
 $item->title = $_POST['title'];
 $item->quantity = 1;
-$item->unit_price = $_POST['price'];
+$item->unit_price = "https://marianeitor-mp-commerce-php.herokuapp.com" . $_POST['price'];
 $item->picture_url = $_POST['img'];
 $item->description = "Dispositivo móvil de Tienda e-commerce";
 
@@ -66,5 +66,8 @@ $preference->back_urls = array(
 $preference->auto_return = "approved";
 
 print_r ($preference);
-//$preference->save();
+$preference->save();
+
+header("Location: ". $preference->init_point);
+
 ?>
