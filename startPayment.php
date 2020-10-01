@@ -62,6 +62,6 @@ $preference->back_urls = array(
 );
 $preference->auto_return = "approved";
 
-echo json_encode($preference);
+print_r ($preference);
 //$preference->save();
 ?>
