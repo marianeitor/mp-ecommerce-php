@@ -27,7 +27,9 @@ $item->quantity = 1;
 $item->unit_price = 75.56;
 $preference->items = array($item);
 
-$preference->payment_methods->excluded_payment_methods = array("id"=>"amex");
+$paymentMethod = new MercadoPago\PaymentMethod();
+$paymentMethod->id = "amex";
+$preference->payment_methods->excluded_payment_methods = array($paymentMethod);
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Charles";
