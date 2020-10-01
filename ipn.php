@@ -24,6 +24,7 @@ switch($_GET["topic"]) {
         break;
     case "merchant_order":
         $merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
+        file_put_contents("response2.json", json_encode($merchant_order));
         break;
 }
 ?>
