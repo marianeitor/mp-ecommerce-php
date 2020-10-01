@@ -63,7 +63,9 @@ $preference->back_urls = array(
     "failure" => "https://marianeitor-mp-commerce-php.herokuapp.com/failure.php",
     "pending" => "https://marianeitor-mp-commerce-php.herokuapp.com/pending.php"
 );
+
 $preference->auto_return = "approved";
+$preference->notification_url = "https://marianeitor-mp-commerce-php.herokuapp.com/ipn.php";
 
 print_r ($preference);
 $preference->save();
