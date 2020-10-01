@@ -63,9 +63,9 @@
             </div>
         </div>
         <div>Su pago ha sido Aprobado</div>
-        <div>payment_method_id: <?php echo $_GET["payment_method_id"] ?></div>
+        <div>payment_method: <?php echo $_GET["payment_type"] ?></div>
         <div>external_reference: <?php echo $_GET["external_reference"] ?></div>
-        <div>payment_id: <?php echo $_GET["payment_id"] ?></div>
+        <div>collection_id: <?php echo $_GET["collection_id"] ?></div>
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
         <div class="as-footnotes ">
             <div class="as-footnotes-content">

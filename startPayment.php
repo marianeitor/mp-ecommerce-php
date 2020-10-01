@@ -22,12 +22,12 @@ $preference = new MercadoPago\Preference();
 
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
+$item->id = "1234";
 $item->title = $_POST['title'];
 $item->quantity = 1;
 $item->unit_price = $_POST['price'];
 $item->picture_url = "https://marianeitor-mp-commerce-php.herokuapp.com".$_POST['img'];
 $item->description = "Dispositivo móvil de Tienda e-commerce";
-
 
 $preference->items = array($item);
 
@@ -64,6 +64,7 @@ $preference->back_urls = array(
     "pending" => "https://marianeitor-mp-commerce-php.herokuapp.com/pending.php"
 );
 
+$preference->external_reference = "mariano1colombo@hotmail.com";
 $preference->auto_return = "approved";
 $preference->notification_url = "https://marianeitor-mp-commerce-php.herokuapp.com/ipn.php";
 
