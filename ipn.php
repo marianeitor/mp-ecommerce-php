@@ -12,7 +12,7 @@ switch($_GET["topic"]) {
         $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
         // Get the payment and the corresponding merchant_order reported by the IPN.
         $merchant_order = MercadoPago\MerchantOrder::find_by_id($payment->order->id);
-        file_put_contents("response.json", json_encode($merchant_order));
+        file_put_contents("response.json", json_encode($payment));
         break;
     case "merchant_order":
         $merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
