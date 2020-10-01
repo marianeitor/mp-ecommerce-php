@@ -71,9 +71,6 @@ $preference->notification_url = "https://marianeitor-mp-commerce-php.herokuapp.c
 print_r ($preference);
 $preference->save();
 
-echo $item->picture_url;
-die();
-
 header("Location: ". $preference->init_point);
 
 ?>
