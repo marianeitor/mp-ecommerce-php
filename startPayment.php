@@ -59,9 +59,9 @@ $payer->address = array(
 );
 
 $preference->back_urls = array(
-    "success" => "https://www.tu-sitio/success",
-    "failure" => "http://www.tu-sitio/failure",
-    "pending" => "http://www.tu-sitio/pending"
+    "success" => "https://marianeitor-mp-commerce-php.herokuapp.com/success.php",
+    "failure" => "https://marianeitor-mp-commerce-php.herokuapp.com/failure.php",
+    "pending" => "https://marianeitor-mp-commerce-php.herokuapp.com/pending.php"
 );
 $preference->auto_return = "approved";
 
