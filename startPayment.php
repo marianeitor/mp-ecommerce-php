@@ -27,7 +27,7 @@ $item->title = $_POST['title'];
 $item->quantity = 1;
 $item->unit_price = $_POST['price'];
 $item->picture_url = "https://marianeitor-mp-commerce-php.herokuapp.com".substr($_POST['img'],1);
-$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->description = "Dispositivo movil de Tienda e-commerce";
 
 $preference->items = array($item);
 
