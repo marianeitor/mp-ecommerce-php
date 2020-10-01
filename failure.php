@@ -12,8 +12,6 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
 
-    <script src="https://www.mercadopago.com/v2/security.js" view="search"></script>
-
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
     <link rel="stylesheet" href="./assets/category.css" media="screen, print">
@@ -64,7 +62,7 @@
                 </div>
             </div>
         </div>
-
+        <div>Su pago ha sido rechazado</div>
     <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
     <div class="as-footnotes ">
         <div class="as-footnotes-content">
