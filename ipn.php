@@ -15,7 +15,7 @@ MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
 $merchant_order = null;
 
-file_put_contents("post.json", json_encode($_POST));
+file_put_contents("post.json", json_encode($_POST), FILE_APPEND);
 
 switch($_GET["topic"]) {
     case "payment":
