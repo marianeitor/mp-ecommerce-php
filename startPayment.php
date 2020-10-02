@@ -27,13 +27,14 @@ $item->title = $_POST['title'];
 $item->quantity = 1;
 $item->unit_price = $_POST['price'];
 $item->picture_url = "https://marianeitor-mp-commerce-php.herokuapp.com".substr($_POST['img'],1);
-$item->description = "Dispositivo movil de Tienda e-commerce";
+$item->description = "Dispositivo móvil de Tienda e-commerce";
 
 $preference->items = array($item);
 
 $preference->payment_methods = array(
     "excluded_payment_methods" => array(
-        array("id" => "amex")
+        array("id" => "amex"),
+        array("id" => "atm")
     ),
     "installments" => 6
 );
@@ -57,6 +58,8 @@ $payer->address = array(
     "street_number" => 123,
     "zip_code" => "1111"
 );
+
+$preference->payer = $payer;
 
 $preference->back_urls = array(
     "success" => "https://marianeitor-mp-commerce-php.herokuapp.com/success.php",
