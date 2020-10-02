@@ -20,7 +20,7 @@ $json = file_get_contents('php://input');
 $data = json_decode($json);
 
 file_put_contents("post.json", $json, FILE_APPEND);
-file_put_contents("get.json", json_encode($_GET), FILE_APPEND);
+//file_put_contents("get.json", json_encode($_GET), FILE_APPEND);
 
 
 switch($_POST["type"]) {
