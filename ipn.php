@@ -15,13 +15,15 @@ MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
 $merchant_order = null;
 
+file_put_contents("post.json", json_encode($_POST));
+
 switch($_GET["topic"]) {
     case "payment":
         $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
         // Get the payment and the corresponding merchant_order reported by the IPN.
         $merchant_order = MercadoPago\MerchantOrder::find_by_id($payment->order->id);
         file_put_contents("response.json", $_GET["id"]);
-        echo get_object_vars($payment);
+        get_object_vars($payment);
         break;
     case "merchant_order":
         $merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
