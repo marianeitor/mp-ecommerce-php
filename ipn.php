@@ -13,12 +13,27 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
 //Seteo de integrator ID
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
-$merchant_order = null;
-
 file_put_contents("post.json", json_encode($_POST), FILE_APPEND);
 file_put_contents("get.json", json_encode($_GET), FILE_APPEND);
 
-switch($_GET["topic"]) {
+
+switch($_POST["type"]) {
+    case "payment":
+        $payment = MercadoPago\Payment.find_by_id($_POST["id"]);
+        break;
+    case "plan":
+        $plan = MercadoPago\Plan.find_by_id($_POST["id"]);
+        break;
+    case "subscription":
+        $plan = MercadoPago\Subscription.find_by_id($_POST["id"]);
+        break;
+    case "invoice":
+        $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
+        break;
+}
+
+
+/*switch($_GET["topic"]) {
     case "payment":
         $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
         // Get the payment and the corresponding merchant_order reported by the IPN.
@@ -30,5 +45,5 @@ switch($_GET["topic"]) {
         $merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["id"]);
         file_put_contents("merchant.json", json_encode($merchant_order));
         break;
-}
+}*/
 ?>
