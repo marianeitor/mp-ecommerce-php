@@ -85,7 +85,6 @@ $preference->external_reference = "mariano1colombo@hotmail.com";
 $preference->auto_return = "approved";
 $preference->notification_url = "https://marianeitor-mp-commerce-php.herokuapp.com/webhook.php";
 
-print_r ($preference);
 $preference->save();
 
 header("Location: ". $preference->init_point);
