@@ -63,12 +63,17 @@ $payer->address = array(
 
 $preference->payer = $payer;
 
-$preference->shipments = array("mode"=>"me2", "dimensions"=>"100x28x28,1000", "receiver_address" => array(
+$shipment = new MercadoPago\Shipments();
+$shipment->mode = "me2";
+$shipment->dimensions = "100x28x28,1000";
+$shipment->receiver_address = array(
     "street_name" => "Belgrano",
     "street_number" => 152,
     "zip_code" => "2681",
     "city_name" => "Etruria"
-));
+);
+
+$preference->shipments = $shipment;
 
 $preference->back_urls = array(
     "success" => "https://marianeitor-mp-commerce-php.herokuapp.com/success.php",
